@@ -1,12 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-</head>
-<body>
-    
-</body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="px-10 py-2">
+    <div class="container grid grid-cols-4 mx-auto max-w-[1280px] px-10 mt-10">
+      <div class="w-full border rounded-md overflow-hidden border-black/10">
+        <div class="w-full aspect-square relative">
+          <img
+            src="./images/Kugoo.svg"
+            alt="scooter"
+            class="w-full object-contain h-full"
+          />
+          <span
+            class="absolute top-2 left-2 inline-block px-2 py-0.5 rounded bg-red-600 text-sm text-white"
+            >XIT</span
+          >
+        </div>
+        <div class="p-4">
+          <h3 class="text-lg font-[650]">Kugoo</h3>
+          <ul class="text-black/60 grid grid-cols-2 gap-2 mt-3">
+            <li>
+              <i class="fa me-1 fa-car-battery"></i>
+              <span>200 mAh</span>
+            </li>
+            <li>
+              <i class="fa me-1 fa-bolt"></i>
+              <span>Energy</span>
+            </li>
+            <li>
+              <i class="fa me-1 fa-gauge-high"></i>
+              <span>60 kMh</span>
+            </li>
+            <li>
+              <i class="fa me-1 fa-stopwatch"></i>
+              <span>Clock</span>
+            </li>
+          </ul>
+          <div class="flex-col justify-between mt-3 items-center">
+            <div class="flex flex-col">
+              <del class="text-black/40">38 900</del>
+              <span class="font-semibold text-2xl">29 900 rub</span>
+            </div>
+            <button class="w-14 aspect-square flex border border-black/20 rounded-full text-[#6F73EE] items-center justify-center">
+                <i class="fa fas fa-shopping-basket"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
