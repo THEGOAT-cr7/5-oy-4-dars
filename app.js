@@ -2,6 +2,8 @@ const $ = (e) => document.querySelector(e);
 const $$ = (es) => Array.from(document.querySelector(es));
 
 const productsWrap = $(".products");
+const cartWrap = $(".cartItems");
+const cart = new Set()
 
 const products = [
   {
@@ -58,7 +60,7 @@ const print = () => {
   productsWrap.innerHTML = "";
   products.map(p => {
       productsWrap.innerHTML += `
-        <div class="w-full border rounded-xl overflow-hidden border-black/10">
+        <div data-id="${p.id}" class="w-full border rounded-xl overflow-hidden border-black/10">
         <div class="w-full bg-[#F0F1F5] aspect-square relative">
           <img
             src="${p.image}"
@@ -95,8 +97,8 @@ const print = () => {
               ${p.discout ? `<del class="text-black/40">${p.price}</del>` : " "}
               <span class="font-semibold text-2xl">${p.discout ? p.discout : p.price}</span>
             </div>
-            <button class="w-14 border text-[#6F73EE] text-xl border-black/20 rounded-full aspect-square flex items-center justify-center transition-all hover:bg-[#6F73EE] hover:text-white cursor-pointer">
-              <i class="fa fas fa-shopping-basket"></i>
+            <button data-id="${p.id}" class="addToCart w-14 border text-[#6F73EE] text-xl border-black/20 rounded-full aspect-square flex items-center justify-center transition-all hover:bg-[#6F73EE] hover:text-white cursor-pointer">
+              <i class="fa fas fa-shopping-basket select-none pointer-events-none"></i>
             </button>
           </div>
         </div>
@@ -104,5 +106,21 @@ const print = () => {
       `;
   })
 };
+
+const printCart = () => {
+    let carts = [
+
+    ]
+    cart.forEach(e => { carts.push(e) })
+    cartWrap.innerHTML = carts.join()
+}
+
+window.addEventListener("click", (e) => {
+    if(e.target.classList.contains("addToCart")){
+        cart.add(e.target.dataset.id);
+        printCart()
+    }
+})
+
 
 print()
