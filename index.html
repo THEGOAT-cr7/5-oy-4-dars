@@ -14,7 +14,7 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="py-2">
+  <body class="max-w-[1280px] mx-auto py-2">
     <div class="flex justify-between px-10 text-[#5D6C7B] items-center">
       <ul class="flex justify-between items-center gap-6">
         <li><a href="#">Сервис</a></li>
@@ -65,6 +65,7 @@
           </a>
           <input
             type="text"
+            id="searchProduct"
             placeholder="Искать самокат KUGO"
             class="w-[300px] h-full outline-none"
           />
@@ -226,16 +227,63 @@
       </div>
     </div>
 
+    <!-- Inputs -->
+
+    <div id="product-form" class="mt-5">
+      <input
+        type="text" 
+        id="title"
+        class="border border-[#6F73EE] p-2 w-[15%] rounded"
+        placeholder="Title"
+      />
+      <input
+        type="number"
+        id="price"
+        class="border border-[#6F73EE] p-2 w-[15%] rounded"
+        placeholder="Price"
+      />
+      <input
+        type="text"
+        id="type"
+        class="border border-[#6F73EE] p-2 w-[15%] rounded"
+        placeholder="Type"
+      />
+      <input
+        type="text"
+        id="battery"
+        class="border border-[#6F73EE] p-2 w-[15%] rounded"
+        placeholder="Battery"
+      />
+      <input
+        type="text"
+        id="speed"
+        class="border border-[#6F73EE] p-2 w-[15%] rounded"
+        placeholder="Speed"
+      />
+      <input
+        type="text"
+        id="powerHours"
+        class="border border-[#6F73EE] p-2 w-[15%] rounded"
+        placeholder="Power Hours"
+      />
+      <button id="addBtn" class="bg-[#6F73EE] text-white px-3 py-2 rounded border border-[#6F73EE]">
+        Add <i class="fa fa-plus"></i>
+      </button>
+    </div><br>
+
+    <div id="product-list"></div>
+
     <!-- Products -->
 
-    <div class="container text-lg font-semibold mt-10 items-center flex gap-2 max-w-[1280px] mx-auto px-10">
+    <div
+      class="container text-lg font-semibold mt-10 items-center flex gap-2 max-w-[1280px] mx-auto px-10"
+    >
       <p>Korzinka:</p>
       <p class="cartItems"></p>
     </div>
-    <div class="container products grid gap-5 grid-cols-4 mx-auto max-w-[1280px] px-10 mt-10">
-
-      
-    </div>
+    <div
+      class="container products grid gap-5 grid-cols-4 mx-auto max-w-[1280px] px-10 mt-10"
+    ></div>
 
     <script src="app.js"></script>
   </body>
